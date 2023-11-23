@@ -28,19 +28,7 @@
       <a name="value" val="0x0"/>
     </tool>
   </lib>
-  <lib desc="#Gates" name="1">
-    <tool name="NOT Gate">
-      <a name="size" val="20"/>
-    </tool>
-    <tool name="AND Gate">
-      <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
-    </tool>
-    <tool name="OR Gate">
-      <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
-    </tool>
-  </lib>
+  <lib desc="#Gates" name="1"/>
   <lib desc="#Plexers" name="2"/>
   <lib desc="#Arithmetic" name="3"/>
   <lib desc="#Memory" name="4">
@@ -59,7 +47,7 @@
       <a name="valign" val="base"/>
     </tool>
   </lib>
-  <main name="16bitReg"/>
+  <main name="8bitReg"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -92,22 +80,22 @@
     <tool lib="1" name="AND Gate"/>
     <tool lib="1" name="OR Gate"/>
   </toolbar>
-  <circuit name="16bitReg">
-    <a name="circuit" val="16bitReg"/>
+  <circuit name="8bitReg">
+    <a name="circuit" val="8bitReg"/>
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <appear>
-      <rect fill="none" height="40" stroke="#000000" stroke-width="2" width="30" x="160" y="110"/>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="174" y="147">16bit</text>
-      <circ-port height="8" pin="390,220" width="8" x="156" y="106"/>
-      <circ-port height="8" pin="390,270" width="8" x="156" y="116"/>
-      <circ-port height="8" pin="400,360" width="8" x="156" y="126"/>
-      <circ-port height="8" pin="400,440" width="8" x="166" y="146"/>
-      <circ-port height="8" pin="400,470" width="8" x="156" y="136"/>
-      <circ-port height="8" pin="400,530" width="8" x="176" y="146"/>
-      <circ-port height="10" pin="810,360" width="10" x="185" y="125"/>
-      <circ-anchor facing="east" height="6" width="6" x="157" y="107"/>
+      <rect fill="none" height="40" stroke="#000000" stroke-width="2" width="30" x="130" y="80"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="145" y="118">8bit</text>
+      <circ-port height="8" pin="390,220" width="8" x="126" y="76"/>
+      <circ-port height="8" pin="390,270" width="8" x="126" y="86"/>
+      <circ-port height="8" pin="400,360" width="8" x="126" y="96"/>
+      <circ-port height="8" pin="400,440" width="8" x="136" y="116"/>
+      <circ-port height="8" pin="400,470" width="8" x="126" y="106"/>
+      <circ-port height="8" pin="400,530" width="8" x="146" y="116"/>
+      <circ-port height="10" pin="810,360" width="10" x="155" y="95"/>
+      <circ-anchor facing="east" height="6" width="6" x="127" y="77"/>
     </appear>
     <wire from="(420,270)" to="(420,340)"/>
     <wire from="(400,530)" to="(590,530)"/>
@@ -137,63 +125,60 @@
     <wire from="(450,220)" to="(460,220)"/>
     <wire from="(420,460)" to="(430,460)"/>
     <wire from="(540,330)" to="(550,330)"/>
-    <comp lib="6" loc="(691,272)" name="Text">
-      <a name="text" val="Trying to make Logisim Counter function similar to CD4516B"/>
-    </comp>
-    <comp lib="1" loc="(450,220)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="0" loc="(400,470)" name="Pin">
+    <comp lib="0" loc="(390,270)" name="Pin">
       <a name="tristate" val="false"/>
-      <a name="label" val="!CarryIn"/>
-    </comp>
-    <comp lib="0" loc="(390,220)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="Up!Down"/>
-    </comp>
-    <comp lib="1" loc="(460,370)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
-    <comp lib="1" loc="(560,420)" name="OR Gate">
-      <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
+      <a name="label" val="Load"/>
     </comp>
     <comp lib="1" loc="(470,450)" name="AND Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
       <a name="negate1" val="true"/>
     </comp>
-    <comp lib="0" loc="(400,360)" name="Pin">
-      <a name="width" val="16"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Din"/>
-    </comp>
-    <comp lib="0" loc="(390,270)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="Load"/>
+    <comp lib="1" loc="(540,330)" name="OR Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
     </comp>
     <comp lib="0" loc="(400,440)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="Clk"/>
     </comp>
-    <comp lib="4" loc="(600,360)" name="Counter">
-      <a name="width" val="16"/>
-      <a name="max" val="0xffff"/>
+    <comp lib="6" loc="(691,272)" name="Text">
+      <a name="text" val="Trying to make Logisim Counter function similar to CD4516B"/>
     </comp>
     <comp lib="0" loc="(400,530)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="Reset"/>
     </comp>
+    <comp lib="0" loc="(400,470)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="!CarryIn"/>
+    </comp>
     <comp lib="0" loc="(810,360)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
-      <a name="width" val="16"/>
+      <a name="width" val="8"/>
       <a name="label" val="Dout"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="1" loc="(540,330)" name="OR Gate">
+    <comp lib="0" loc="(400,360)" name="Pin">
+      <a name="width" val="8"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Din"/>
+    </comp>
+    <comp lib="1" loc="(450,220)" name="NOT Gate">
+      <a name="size" val="20"/>
+    </comp>
+    <comp lib="1" loc="(560,420)" name="OR Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(390,220)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Up!Down"/>
+    </comp>
+    <comp lib="4" loc="(600,360)" name="Counter"/>
+    <comp lib="1" loc="(460,370)" name="NOT Gate">
+      <a name="size" val="20"/>
     </comp>
   </circuit>
 </project>
