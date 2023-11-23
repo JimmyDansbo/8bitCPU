@@ -81,6 +81,17 @@
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <rect fill="none" height="40" stroke="#000000" stroke-width="2" width="30" x="170" y="60"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="185" y="84">ALU</text>
+      <circ-port height="8" pin="180,110" width="8" x="176" y="56"/>
+      <circ-port height="8" pin="180,150" width="8" x="166" y="66"/>
+      <circ-port height="8" pin="180,170" width="8" x="166" y="86"/>
+      <circ-port height="8" pin="190,820" width="8" x="176" y="96"/>
+      <circ-port height="10" pin="1010,210" width="10" x="195" y="65"/>
+      <circ-port height="10" pin="1010,450" width="10" x="195" y="75"/>
+      <circ-anchor facing="east" height="6" width="6" x="167" y="57"/>
+    </appear>
     <wire from="(950,250)" to="(950,390)"/>
     <wire from="(270,130)" to="(270,270)"/>
     <wire from="(420,180)" to="(420,190)"/>
@@ -271,14 +282,8 @@
       <a name="bit6" val="none"/>
       <a name="bit7" val="0"/>
     </comp>
-    <comp lib="6" loc="(916,235)" name="Text">
-      <a name="text" val="Zero"/>
-    </comp>
     <comp lib="6" loc="(909,175)" name="Text">
       <a name="text" val="Negative"/>
-    </comp>
-    <comp lib="1" loc="(610,700)" name="Controlled Buffer">
-      <a name="width" val="8"/>
     </comp>
     <comp lib="3" loc="(440,160)" name="Adder"/>
     <comp lib="1" loc="(440,540)" name="AND Gate">
@@ -288,10 +293,6 @@
     </comp>
     <comp lib="1" loc="(350,180)" name="XOR Gate">
       <a name="width" val="8"/>
-      <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="1" loc="(500,80)" name="XNOR Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
     </comp>
@@ -312,26 +313,9 @@
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="0" loc="(280,200)" name="Splitter">
-      <a name="facing" val="south"/>
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-    </comp>
     <comp lib="1" loc="(870,240)" name="NOR Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="8"/>
-    </comp>
-    <comp lib="0" loc="(370,80)" name="Splitter">
-      <a name="fanout" val="1"/>
-      <a name="incoming" val="8"/>
-      <a name="bit0" val="none"/>
-      <a name="bit1" val="none"/>
-      <a name="bit2" val="none"/>
-      <a name="bit3" val="none"/>
-      <a name="bit4" val="none"/>
-      <a name="bit5" val="none"/>
-      <a name="bit6" val="none"/>
-      <a name="bit7" val="0"/>
     </comp>
     <comp lib="6" loc="(951,85)" name="Text">
       <a name="text" val="Overflow"/>
@@ -345,6 +329,81 @@
     </comp>
     <comp lib="1" loc="(610,540)" name="Controlled Buffer">
       <a name="width" val="8"/>
+    </comp>
+    <comp lib="6" loc="(146,722)" name="Text">
+      <a name="text" val="000 - ADC"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="1" loc="(610,360)" name="Controlled Buffer">
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="0" loc="(440,360)" name="Splitter">
+      <a name="facing" val="north"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </comp>
+    <comp lib="1" loc="(610,620)" name="Controlled Buffer">
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="1" loc="(590,210)" name="OR Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(440,450)" name="Splitter">
+      <a name="facing" val="north"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </comp>
+    <comp lib="6" loc="(146,771)" name="Text">
+      <a name="text" val="100 - AND"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="1" loc="(640,80)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+      <a name="negate1" val="true"/>
+    </comp>
+    <comp lib="0" loc="(1010,210)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+      <a name="label" val="Flags"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="6" loc="(146,759)" name="Text">
+      <a name="text" val="011 - SHR"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="6" loc="(916,235)" name="Text">
+      <a name="text" val="Zero"/>
+    </comp>
+    <comp lib="6" loc="(146,783)" name="Text">
+      <a name="text" val="101 - OR"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="1" loc="(610,700)" name="Controlled Buffer">
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="1" loc="(500,80)" name="XNOR Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(280,200)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </comp>
+    <comp lib="0" loc="(370,80)" name="Splitter">
+      <a name="fanout" val="1"/>
+      <a name="incoming" val="8"/>
+      <a name="bit0" val="none"/>
+      <a name="bit1" val="none"/>
+      <a name="bit2" val="none"/>
+      <a name="bit3" val="none"/>
+      <a name="bit4" val="none"/>
+      <a name="bit5" val="none"/>
+      <a name="bit6" val="none"/>
+      <a name="bit7" val="0"/>
     </comp>
     <comp lib="1" loc="(360,120)" name="OR Gate">
       <a name="size" val="30"/>
@@ -360,8 +419,9 @@
     <comp lib="6" loc="(1029,197)" name="Text">
       <a name="text" val="O N Z C"/>
     </comp>
-    <comp lib="1" loc="(610,360)" name="Controlled Buffer">
-      <a name="width" val="8"/>
+    <comp lib="6" loc="(146,735)" name="Text">
+      <a name="text" val="001 - SBC"/>
+      <a name="halign" val="left"/>
     </comp>
     <comp lib="0" loc="(1010,450)" name="Pin">
       <a name="facing" val="west"/>
@@ -382,6 +442,10 @@
       <a name="bit1" val="2"/>
       <a name="bit2" val="1"/>
       <a name="bit3" val="0"/>
+    </comp>
+    <comp lib="6" loc="(146,794)" name="Text">
+      <a name="text" val="110 - XOR"/>
+      <a name="halign" val="left"/>
     </comp>
     <comp lib="0" loc="(180,150)" name="Pin">
       <a name="width" val="8"/>
@@ -405,6 +469,7 @@
     <comp lib="0" loc="(190,820)" name="Pin">
       <a name="width" val="3"/>
       <a name="tristate" val="false"/>
+      <a name="label" val="Operation"/>
     </comp>
     <comp lib="0" loc="(790,280)" name="Splitter">
       <a name="fanout" val="8"/>
@@ -418,29 +483,16 @@
       <a name="bit6" val="1"/>
       <a name="bit7" val="0"/>
     </comp>
-    <comp lib="0" loc="(440,360)" name="Splitter">
-      <a name="facing" val="north"/>
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-    </comp>
     <comp lib="1" loc="(920,90)" name="AND Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="1" loc="(610,620)" name="Controlled Buffer">
-      <a name="width" val="8"/>
-    </comp>
-    <comp lib="1" loc="(590,210)" name="OR Gate">
-      <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
+    <comp lib="6" loc="(146,747)" name="Text">
+      <a name="text" val="010 - SHL"/>
+      <a name="halign" val="left"/>
     </comp>
     <comp lib="0" loc="(360,400)" name="Splitter">
       <a name="facing" val="south"/>
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
-    </comp>
-    <comp lib="0" loc="(440,450)" name="Splitter">
-      <a name="facing" val="north"/>
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
     </comp>
@@ -449,17 +501,9 @@
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
     </comp>
-    <comp lib="1" loc="(640,80)" name="AND Gate">
-      <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
-      <a name="negate1" val="true"/>
-    </comp>
-    <comp lib="0" loc="(1010,210)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="4"/>
-      <a name="label" val="Flags"/>
-      <a name="labelloc" val="east"/>
+    <comp lib="6" loc="(146,806)" name="Text">
+      <a name="text" val="111 - CMP"/>
+      <a name="halign" val="left"/>
     </comp>
   </circuit>
 </project>
